@@ -8,8 +8,8 @@ const About = () => {
   const highlights = [
     { 
       icon: <Zap className="text-primary w-6 h-6" />, 
-      title: "10+ Years Legacy", 
-      desc: "A decade of expertise in delivering high-efficiency solar power." 
+      title: "13+ Years Exp", 
+      desc: "Over 13 years of expertise in delivering high-efficiency solar power." 
     },
     { 
       icon: <Award className="text-primary w-6 h-6" />, 

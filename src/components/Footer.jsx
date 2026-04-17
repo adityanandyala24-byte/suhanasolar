@@ -61,9 +61,9 @@ const Footer = () => {
                 </p>
               </div>
               <div className="flex flex-wrap gap-4 pt-4 border-t border-white/5">
-                <a href="tel:+919010250258" className="flex items-center gap-3 bg-white/5 hover:bg-white/10 text-white/80 px-4 py-2 rounded-xl transition-all">
+                <a href="tel:+919618727373" className="flex items-center gap-3 bg-white/5 hover:bg-white/10 text-white/80 px-4 py-2 rounded-xl transition-all">
                    <Phone className="w-4 h-4 text-primary" />
-                   <span className="text-xs font-bold font-mono">+91 90102 50258</span>
+                   <span className="text-xs font-bold font-mono">+91 96187 27373</span>
                 </a>
               </div>
             </div>

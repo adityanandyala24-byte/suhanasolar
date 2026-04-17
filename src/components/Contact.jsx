@@ -30,7 +30,7 @@ const Contact = () => {
               </div>
               <div>
                 <p className="text-sm font-bold text-slate-400 uppercase tracking-wider">Phone</p>
-                <p className="text-xl font-bold text-secondary">+91 90102 50258</p>
+                <p className="text-xl font-bold text-secondary">+91 96187 27373</p>
               </div>
             </div>
             <div className="flex items-center gap-6">
@@ -175,7 +175,7 @@ const Contact = () => {
 
       {/* Floating WhatsApp Button */}
       <a 
-        href="https://wa.me/919010250258" 
+        href="https://wa.me/919618727373" 
         target="_blank" 
         rel="noopener noreferrer"
         className="fixed bottom-8 right-8 z-50 p-4 bg-[#25D366] text-white rounded-full shadow-2xl hover:scale-110 active:scale-95 transition-all animate-bounce hover:animate-none"

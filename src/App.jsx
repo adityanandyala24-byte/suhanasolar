@@ -11,6 +11,7 @@ import Gallery from './components/Gallery';
 import Contact from './components/Contact';
 import Partners from './components/Partners';
 import ReviewsTicker from './components/ReviewsTicker';
+import Team from './components/Team';
 import Footer from './components/Footer';
 
 function App() {
@@ -42,6 +43,8 @@ function App() {
       
       <Calculator />
       <ReviewsTicker />
+      
+      <Team />
       
       <div id="contact">
         <Contact />

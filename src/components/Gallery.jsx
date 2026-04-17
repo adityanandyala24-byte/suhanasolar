@@ -6,7 +6,7 @@ const Gallery = () => {
   const [index, setIndex] = useState(0);
   const images = Array.from({ length: 22 }, (_, i) => ({
     id: i + 1,
-    title: `Solar Installation 0${i + 1}`.replace('010', '10').replace('020', '20').replace(/0(\d{2})/, '$1'), // Pads single digit
+    title: "OUR SNPS Installations",
     category: i % 3 === 0 ? "Commercial" : i % 2 === 0 ? "Industrial" : "Residential",
     src: `/gallery/project-${i + 1}.jpeg`
   }));
