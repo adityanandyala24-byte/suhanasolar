@@ -4,18 +4,19 @@ import { User } from 'lucide-react';
 
 const Team = () => {
   const leadership = [
-    { name: "Sri. Sk Sabeer Basha", edu: "B.Tech (EEE)", role: "Managing Director", image: "/sabeer.jpeg", objectPosition: "center 35%" },
-    { name: "Sri. Sk Salman Basha", edu: "M.Tech (PhD)", role: "Managing Partner", image: "/basha.jpeg", objectPosition: "center 15%" }
+    { name: "Sri. J.V. Krishna Prasad", role: "Honorary President", image: "/vk-prasad.jpeg", objectPosition: "center 15%" },
+    { name: "Sri. Sk Sabeer Basha", edu: "B.Tech (EEE)", role: "Managing Director", image: "/sabeer.jpeg", objectPosition: "center 10%", scale: 1.1 },
+    { name: "Sri. Sk Salman Basha", edu: "M.Tech (PhD)", role: "Managing Partner", image: "/basha.jpeg", objectPosition: "center 10%" }
   ];
 
   const staff = [
-    { name: "Mr. Sk Imran", role: "Manager (Stores)", image: "/imran.png" },
-    { name: "Mr. Sk Kamal Basha", role: "Business Development Executive", image: "/kamal.jpeg" },
+    { name: "Mr. Sk Kamal", role: "Business Development Manager", image: "/kamal.jpeg", objectPosition: "center 15%" },
+    { name: "Mr. Sk Imran", role: "Manager (Stores)", image: "/imran.png", objectPosition: "center 10%" },
     { name: "Mr. M. Satish Kumar", role: "Accountant" },
-    { name: "Mr. Sk Mastan", role: "Manager (Installations)", image: "/mastan.jpeg", scale: 1.3 },
-    { name: "Mr. Sk. Shabbir DEEE", role: "Technical Advisor", image: "/shabbir.jpeg" },
-    { name: "Mr. Manoj Prabhakar", role: "Team Leader (Technical)", image: "/manoj.jpeg" },
-    { name: "Mr. Srinu", role: "Transport Supervisor", image: "/srinu.jpeg" }
+    { name: "Mr. Sk Mastan", role: "Manager (Installations)", image: "/mastan.jpeg", scale: 1.3, objectPosition: "center 20%" },
+    { name: "Mr. Sk. Shabbir DEEE", role: "Technical Advisor", image: "/shabbir.jpeg", objectPosition: "center top" },
+    { name: "Mr. Manoj Prabhakar", role: "Team Leader (Technical)", image: "/manoj.jpeg", objectPosition: "center top" },
+    { name: "Mr. Srinu", role: "Transport Supervisor", image: "/srinu.jpeg", objectPosition: "center top" }
   ];
 
   // For infinite scroll effect, we duplicate the staff array
@@ -78,20 +79,20 @@ const Team = () => {
         <div className="absolute inset-y-0 right-0 w-20 bg-gradient-to-l from-white to-transparent z-20 pointer-events-none" />
         
         <motion.div 
-          className="flex gap-8 items-start py-4"
+          className="flex gap-10 items-start py-6"
           animate={{
             x: ["0%", "-50%"]
           }}
           transition={{
-            duration: 25,
+            duration: 30,
             repeat: Infinity,
             ease: "linear"
           }}
           style={{ width: "fit-content" }}
         >
           {scrollingStaff.map((member, i) => (
-            <div key={i} className="flex flex-col items-center group min-w-[140px] md:min-w-[180px] cursor-pointer">
-              <div className="w-24 h-24 md:w-28 md:h-28 rounded-full bg-slate-50 mb-3 border-2 border-slate-100 shadow-md flex items-center justify-center overflow-hidden group-hover:-translate-y-1.5 group-hover:border-primary/40 transition-all duration-500 group-hover:shadow-primary/5">
+            <div key={i} className="flex flex-col items-center group min-w-[160px] md:min-w-[200px] cursor-pointer">
+              <div className="w-28 h-28 md:w-32 md:h-32 rounded-full bg-slate-50 mb-4 border-2 border-slate-100 shadow-md flex items-center justify-center overflow-hidden group-hover:-translate-y-1.5 group-hover:border-primary/40 transition-all duration-500 group-hover:shadow-primary/5">
                 {member.image ? (
                   <img 
                     src={member.image} 

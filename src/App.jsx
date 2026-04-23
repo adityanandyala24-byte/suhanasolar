@@ -2,6 +2,7 @@ import React from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import About from './components/About';
+import PMSuryaGhar from './components/PMSuryaGhar';
 import Services from './components/Services';
 import ProductSupplies from './components/ProductSupplies';
 import Stats from './components/Stats';
@@ -14,18 +15,33 @@ import ReviewsTicker from './components/ReviewsTicker';
 import Team from './components/Team';
 import Footer from './components/Footer';
 
+import ScrollIndicator from './components/ScrollIndicator';
+
 function App() {
   return (
     <div className="min-h-screen bg-white">
+      <ScrollIndicator />
       <Navbar />
-      <Hero />
       
-      <Partners />
+      <div id="hero">
+        <Hero />
+      </div>
+      
+      <div id="partners">
+        <Partners />
+      </div>
 
       <div id="about">
         <About />
       </div>
-      <Stats />
+
+      <div id="pmsuryaghar">
+        <PMSuryaGhar />
+      </div>
+
+      <div id="stats">
+        <Stats />
+      </div>
 
       <div id="services">
         <Services />
@@ -35,16 +51,23 @@ function App() {
         <ProductSupplies />
       </div>
       
-      <WhyChooseUs />
+      <div id="whychooseus">
+        <WhyChooseUs />
+      </div>
       
       <div id="gallery">
         <Gallery />
       </div>
       
-      <Calculator />
+      <div id="calculator">
+        <Calculator />
+      </div>
+
       <ReviewsTicker />
       
-      <Team />
+      <div id="team">
+        <Team />
+      </div>
       
       <div id="contact">
         <Contact />

@@ -43,7 +43,7 @@ const Stats = () => {
     { value: 13, suffix: "+", label: "Years Experience" },
     { value: 5000, suffix: "+", label: "Tons CO2 Saved" },
     { value: 800, suffix: "+", label: "Happy Customers" },
-    { value: 5, suffix: "MW+", label: "Installed Capacity" },
+    { value: 20, suffix: "MW+", label: "Installed Capacity" },
   ];
 
   return (

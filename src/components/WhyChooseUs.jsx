@@ -3,69 +3,111 @@ import { motion } from 'framer-motion';
 import { ShieldCheck, Cpu, Users } from 'lucide-react';
 
 const slides = [
-  { src: "/gallery-1.jpeg", caption: "Rooftop Solar Installation" },
-  { src: "/gallery-2.jpeg", caption: "Industrial Solar Project" },
-  { src: "/gallery-3.jpeg", caption: "Residential Solar Setup" },
-  { src: "/gallery-4.jpeg", caption: "Commercial Solar Array" },
+  { src: "/gallery-1.jpeg", caption: "Premium Solar Setup" },
+  { src: "/gallery-2.jpeg", caption: "Expert Installations" },
+  { src: "/gallery-3.jpeg", caption: "Clean Energy Solutions" },
+  { src: "/gallery-4.jpeg", caption: "High Performance Panels" },
 ];
 
-const PhotoSlideshow = () => {
-  const [current, setCurrent] = React.useState(0);
+const Carousel3D = () => {
+  const [index, setIndex] = React.useState(0);
+
+  const next = () => setIndex((prev) => (prev + 1) % slides.length);
+  const prev = () => setIndex((prev) => (prev - 1 + slides.length) % slides.length);
 
   React.useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrent((prev) => (prev + 1) % slides.length);
-    }, 3500);
+    const timer = setInterval(next, 4000);
     return () => clearInterval(timer);
   }, []);
 
   return (
-    <div className="relative aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl border border-white/10">
-      {slides.map((slide, idx) => (
-        <div
-          key={idx}
-          className="absolute inset-0 transition-opacity duration-1000"
-          style={{ opacity: idx === current ? 1 : 0 }}
-        >
-          {/* Blurred background fill — removes ugly letterbox bars */}
-          <img
-            src={slide.src}
-            alt=""
-            aria-hidden="true"
-            className="absolute inset-0 w-full h-full object-cover scale-110 blur-xl opacity-60"
-          />
-          {/* Main image — full view, no cropping */}
-          <img
-            src={slide.src}
-            alt={slide.caption}
-            className="relative z-10 w-full h-full object-contain"
-          />
-          {/* Dark gradient overlay at bottom */}
-          <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-black/60 to-transparent z-20" />
-          {/* Caption */}
-          <div className="absolute bottom-5 left-6 text-white z-30">
-            <p className="text-sm font-semibold tracking-wide">{slide.caption}</p>
-          </div>
-        </div>
-      ))}
+    <div className="relative h-[350px] md:h-[450px] w-full flex items-center justify-center p-4">
+      <div className="relative w-full h-full max-w-[320px] md:max-w-[400px]">
+        {slides.map((slide, i) => {
+          const diff = (i - index + slides.length) % slides.length;
+          
+          let x = 0;
+          let scale = 1;
+          let zIndex = 0;
+          let opacity = 0;
+          let rotateY = 0;
 
+          if (diff === 0) {
+            x = 0;
+            scale = 1;
+            zIndex = 30;
+            opacity = 1;
+            rotateY = 0;
+          } else if (diff === 1 || diff === - (slides.length - 1)) {
+            x = "40%";
+            scale = 0.8;
+            zIndex = 20;
+            opacity = 0.6;
+            rotateY = -25;
+          } else if (diff === slides.length - 1) {
+            x = "-40%";
+            scale = 0.8;
+            zIndex = 20;
+            opacity = 0.6;
+            rotateY = 25;
+          }
 
-      {/* Dot navigation */}
-      <div className="absolute bottom-5 right-6 flex gap-2 z-10">
-        {slides.map((_, idx) => (
+          return (
+            <motion.div
+              key={slide.src}
+              animate={{
+                x,
+                scale,
+                zIndex,
+                opacity,
+                rotateY,
+              }}
+              transition={{
+                type: "spring",
+                stiffness: 300,
+                damping: 30
+              }}
+              className="absolute inset-0 cursor-pointer"
+              onClick={() => setIndex(i)}
+              style={{
+                perspective: "1000px",
+                transformStyle: "preserve-3d"
+              }}
+            >
+              <div className="w-full h-full rounded-[2rem] overflow-hidden shadow-2xl border border-white/10 group">
+                <img 
+                  src={slide.src} 
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" 
+                  alt={slide.caption}
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60" />
+                {diff === 0 && (
+                  <motion.div 
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    className="absolute bottom-6 left-6 right-6 text-white"
+                  >
+                    <p className="text-xs font-bold text-primary uppercase tracking-[0.2em] mb-1">SNPS Project</p>
+                    <p className="text-lg font-black leading-tight uppercase">{slide.caption}</p>
+                  </motion.div>
+                )}
+              </div>
+            </motion.div>
+          );
+        })}
+      </div>
+
+      {/* Navigation dots */}
+      <div className="absolute -bottom-8 flex gap-2">
+        {slides.map((_, i) => (
           <button
-            key={idx}
-            onClick={() => setCurrent(idx)}
-            className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${
-              idx === current ? 'bg-primary scale-125' : 'bg-white/50 hover:bg-white/80'
+            key={i}
+            onClick={() => setIndex(i)}
+            className={`h-1.5 rounded-full transition-all duration-300 ${
+              i === index ? 'w-8 bg-primary' : 'w-2 bg-white/20 hover:bg-white/40'
             }`}
           />
         ))}
-      </div>
-
-      {/* Slide counter */}
-      <div className="absolute top-4 right-4 bg-black/40 backdrop-blur-sm text-white text-xs font-bold px-3 py-1 rounded-full">
-        {current + 1} / {slides.length}
       </div>
     </div>
   );
@@ -92,7 +134,7 @@ const WhyChooseUs = () => {
             <span className="text-primary grayscale-[0.1]">Trusted Solar Partner</span>
           </h2>
           <p className="text-lg text-white/70 mb-12 leading-relaxed">
-            Selecting a solar provider is a 25-year commitment. At SNPS, we prioritize long-term performance
+            Selecting a solar provider is a 30-year commitment. At SNPS, we prioritize long-term performance
             and transparency over short-term gains. Our technical depth and government backing make us
             the preferred choice for thousands.
           </p>
@@ -125,9 +167,10 @@ const WhyChooseUs = () => {
           viewport={{ once: true }}
           className="relative lg:block"
         >
-          <PhotoSlideshow />
+          <Carousel3D />
           {/* Background decoration */}
-          <div className="absolute -top-10 -right-10 w-40 h-40 bg-primary/10 rounded-full blur-3xl -z-10" />
+          <div className="absolute -top-10 -right-10 w-40 h-40 bg-primary/20 rounded-full blur-[80px] -z-10" />
+          <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-secondary-light/30 rounded-full blur-[80px] -z-10" />
         </motion.div>
       </div>
     </section>

@@ -1,27 +1,10 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { CheckCircle2, Award, Users, Zap, ShieldCheck, FileDown, ArrowRight } from 'lucide-react';
+import { Zap, ShieldCheck, FileDown, ArrowRight } from 'lucide-react';
 import BrochureModal from './BrochureModal';
 
 const About = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const highlights = [
-    { 
-      icon: <Zap className="text-primary w-6 h-6" />, 
-      title: "13+ Years Exp", 
-      desc: "Over 13 years of expertise in delivering high-efficiency solar power." 
-    },
-    { 
-      icon: <Award className="text-primary w-6 h-6" />, 
-      title: "Authorized Partner", 
-      desc: "MNRE & APEPDCL authorized vendor ensuring industry standards." 
-    },
-    { 
-      icon: <ShieldCheck className="text-primary w-6 h-6" />, 
-      title: "Quality First", 
-      desc: "Top-tier components sourced from the world's leading manufacturers." 
-    },
-  ];
 
   return (
     <section id="about" className="py-12 md:py-16 bg-white overflow-hidden relative">
@@ -37,40 +20,33 @@ const About = () => {
           transition={{ duration: 0.8 }}
         >
           <div className="inline-block px-4 py-1.5 rounded-full bg-secondary/5 border border-secondary/10 text-secondary font-bold text-[10px] tracking-[0.2em] uppercase mb-6">
-            Our Story & Mission
+            Our Vision & Mission
           </div>
           
-          <h2 className="text-3xl md:text-4xl lg:text-5xl text-secondary font-black leading-tight mb-6">
-            Pioneering the <br/>
-            <span className="text-primary">Solar Revolution</span> <br/>
-            in Andhra Pradesh
-          </h2>
-          
-          <p className="text-base text-slate-500 mb-8 leading-relaxed max-w-xl">
-            Suhana Natural Power Systems is more than just a solar provider. We are your partners in energy independence. By combining cutting-edge technology with local expertise, we help you transition to a cleaner, cheaper future.
-          </p>
+          <div className="space-y-8 max-w-xl">
+            <div className="group">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all">
+                  <Zap className="w-4 h-4" />
+                </div>
+                <h3 className="text-2xl font-black text-secondary">Our Vision</h3>
+              </div>
+              <p className="text-lg text-slate-600 leading-relaxed font-medium">
+                To be a trusted leader in the solar energy industry, driving the transition to sustainable power through reliable, high-performance solutions built on over 13 years of proven experience.
+              </p>
+            </div>
 
-          <div className="space-y-4">
-            {highlights.map((item, idx) => (
-              <motion.div 
-                key={idx}
-                initial={{ opacity: 0, y: 10 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: idx * 0.1 }}
-                className="flex items-start gap-5 group"
-              >
-                <div className="mt-1 w-10 h-10 rounded-xl bg-white border border-slate-100 shadow-sm flex items-center justify-center group-hover:bg-primary group-hover:border-primary transition-all duration-300">
-                  <div className="group-hover:text-white transition-colors scale-75">
-                    {item.icon}
-                  </div>
+            <div className="group">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all">
+                  <ShieldCheck className="w-4 h-4" />
                 </div>
-                <div>
-                  <h5 className="font-bold text-secondary text-base mb-1">{item.title}</h5>
-                  <p className="text-slate-500 text-sm leading-relaxed">{item.desc}</p>
-                </div>
-              </motion.div>
-            ))}
+                <h3 className="text-2xl font-black text-secondary">Our Mission</h3>
+              </div>
+              <p className="text-base text-slate-500 leading-relaxed">
+                Our mission is to deliver efficient, durable, and cost-effective solar installations tailored to each customer’s needs, backed by expert engineering, transparent practices, and dedicated end-to-end support—ensuring long-term savings, energy independence, and customer satisfaction.
+              </p>
+            </div>
           </div>
         </motion.div>
 

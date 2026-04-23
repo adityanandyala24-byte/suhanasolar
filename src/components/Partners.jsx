@@ -11,6 +11,7 @@ const Partners = () => {
     { id: 6, name: "Eastman", img: "/partners/eastman energy.png" },
     { id: 7, name: "Polycab", img: "/partners/polycab.png" },
     { id: 8, name: "Premier", img: "/partners/premier energies.png" },
+    { id: 9, name: "ReNew Solar", img: "/partners/renew.jpeg" },
   ];
 
   // Double the array for seamless infinite scroll

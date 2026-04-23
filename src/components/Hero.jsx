@@ -55,7 +55,10 @@ const Hero = () => {
 
   const partners = [
     { name: 'Vikram Solar', logo: '/partners/vikramsolar.png' },
-    { name: 'Waaree', logo: '/partners/waaree.png' }
+    { name: 'Waaree', logo: '/partners/waaree.png' },
+    { name: 'Tata Solar', logo: '/partners/tata power .png' },
+    { name: 'Adani Solar', logo: '/partners/adani solar.png' },
+    { name: 'Eastman', logo: '/partners/eastman energy.png' }
   ];
 
   React.useEffect(() => {
@@ -106,8 +109,7 @@ const Hero = () => {
 
           <div className="grid sm:grid-cols-2 gap-4 max-w-lg">
             {[
-              "0% Down Payment Options",
-              "25 Years Warranty",
+              "30 Years Warranty",
               "High Yield Performance",
               "Seamless Maintenance"
             ].map((item, idx) => (
@@ -150,7 +152,7 @@ const Hero = () => {
           <div className="bg-white p-8 md:p-10 rounded-[2rem] shadow-2xl border border-white/20 relative min-h-[450px] flex flex-col justify-center items-center text-center">
             <div className="absolute -top-6 -right-6 w-20 h-20 bg-primary rounded-2xl rotate-12 -z-10 shadow-lg" />
             
-            <h3 className="text-3xl font-black text-secondary mb-2">Trusted Partners</h3>
+            <h3 className="text-3xl font-black text-secondary mb-2">Authorized Retailers</h3>
             <p className="text-slate-500 text-sm mb-12">Authorized distributors of Tier-1 Solar Panels</p>
 
             <div className="relative w-full flex-grow flex flex-col items-center justify-center">
@@ -188,6 +190,35 @@ const Hero = () => {
           </div>
         </motion.div>
       </div>
+
+      {/* Scroll Down Indicator */}
+      <motion.div 
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 1.5, duration: 1 }}
+        className="absolute bottom-10 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center gap-2 group cursor-pointer"
+        onClick={() => {
+          document.getElementById('partners')?.scrollIntoView({ behavior: 'smooth' });
+        }}
+      >
+        <div className="w-6 h-10 border-2 border-white/30 rounded-full flex justify-center p-1.5 group-hover:border-primary/50 transition-colors">
+          <motion.div 
+            animate={{ 
+              y: [0, 12, 0],
+              opacity: [1, 0.2, 1]
+            }}
+            transition={{ 
+              duration: 2, 
+              repeat: Infinity, 
+              ease: "easeInOut" 
+            }}
+            className="w-1 h-2 bg-primary rounded-full shadow-[0_0_10px_rgba(249,115,22,0.5)]"
+          />
+        </div>
+        <span className="text-[10px] font-black uppercase tracking-[0.3em] text-white/40 group-hover:text-primary transition-colors">
+          Scroll Down
+        </span>
+      </motion.div>
     </section>
   );
 };

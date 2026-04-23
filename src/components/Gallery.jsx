@@ -6,7 +6,7 @@ const Gallery = () => {
   const [index, setIndex] = useState(0);
   const images = Array.from({ length: 22 }, (_, i) => ({
     id: i + 1,
-    title: "OUR SNPS Installations",
+    title: "our SNPS Installations",
     category: i % 3 === 0 ? "Commercial" : i % 2 === 0 ? "Industrial" : "Residential",
     src: `/gallery/project-${i + 1}.jpeg`
   }));
@@ -31,7 +31,7 @@ const Gallery = () => {
           </div>
           
           <h2 className="text-4xl md:text-5xl lg:text-5xl font-black text-secondary tracking-tight leading-tight">
-            Our <span className="text-primary italic">Solar Footprint</span>
+            our <span className="text-primary italic">Solar Footprint</span>
           </h2>
           
           <p className="text-slate-500 text-lg leading-relaxed">

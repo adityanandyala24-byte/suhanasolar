@@ -3,10 +3,10 @@ import { motion } from 'framer-motion';
 
 const ProductSupplies = () => {
   const products = [
-    { title: "Solar Panels", img: "/products/solar.jpeg", category: "A-Grade Mono/Poly" },
-    { title: "High-End Inverters", img: "/products/high end inventers.jpeg", category: "Grid-Tied & Hybrid" },
-    { title: "ACDB & DCDB", img: "/products/acdb dcdb.jpeg", category: "Protection Units" },
-    { title: "Cables & Accs", img: "/products/cablea and accs.jpeg", category: "Standard Grade" },
+    { title: "Solar Panels", img: "/products/solar panels.jpeg", category: "A-Grade Mono/Poly" },
+    { title: "High-End Inverters", img: "/products/inventers.jpg", category: "Grid-Tied & Hybrid" },
+    { title: "ACDB & DCDB", img: "/products/acdb dcdb.webp", category: "Protection Units" },
+    { title: "Cables & Accs", img: "/products/cables and Accs.jpg", category: "Standard Grade" },
   ];
 
   return (
