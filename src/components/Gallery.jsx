@@ -6,7 +6,7 @@ const Gallery = () => {
   const [index, setIndex] = useState(0);
   const images = Array.from({ length: 22 }, (_, i) => ({
     id: i + 1,
-    title: "our SNPS Installations",
+    title: "Our SNPS Installations",
     category: i % 3 === 0 ? "Commercial" : i % 2 === 0 ? "Industrial" : "Residential",
     src: `/gallery/project-${i + 1}.jpeg`
   }));
@@ -22,20 +22,20 @@ const Gallery = () => {
   return (
     <section id="gallery" className="section-padding bg-white relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-12 gap-12 lg:gap-20 items-center">
-        
+
         {/* Left Column: Text and Content */}
         <div className="lg:col-span-5 space-y-8">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-primary font-bold text-xs tracking-widest uppercase">
             <Zap className="w-4 h-4 text-primary" />
             Project Gallery
           </div>
-          
+
           <h2 className="text-4xl md:text-5xl lg:text-5xl font-black text-secondary tracking-tight leading-tight">
-            our <span className="text-primary italic">Solar Footprint</span>
+            Our <span className="text-primary italic">Solar Footprint</span>
           </h2>
-          
+
           <p className="text-slate-500 text-lg leading-relaxed">
-            Explore our hallmark projects. From compact residential rooftops to massive industrial mega-plants, precision engineering is in our DNA.
+            Explore Our hallmark projects. From compact residential rooftops to massive industrial mega-plants, precision engineering is in our DNA.
           </p>
 
 
@@ -53,16 +53,16 @@ const Gallery = () => {
               className="absolute inset-0 w-full h-full"
             >
               {/* Dual Layer Technique */}
-              <div 
+              <div
                 className="absolute inset-0 bg-cover bg-center blur-xl opacity-40 scale-110"
                 style={{ backgroundImage: `url(${images[index].src})` }}
               />
-              <img 
-                src={images[index].src} 
+              <img
+                src={images[index].src}
                 alt={images[index].title}
                 className="absolute inset-0 w-full h-full object-contain z-10"
               />
-              
+
               {/* Beautiful Gradient overlay for text */}
               <div className="absolute inset-x-0 bottom-0 top-1/2 bg-gradient-to-t from-secondary via-secondary/60 to-transparent z-20 pointer-events-none" />
 
@@ -81,13 +81,13 @@ const Gallery = () => {
           </AnimatePresence>
 
           {/* Centered Navigation Controls */}
-          <button 
+          <button
             onClick={prev}
             className="absolute left-4 top-1/2 -translate-y-1/2 z-40 w-12 h-12 md:w-14 md:h-14 flex items-center justify-center rounded-full bg-white/80 backdrop-blur-md border border-white/20 shadow-xl text-secondary hover:bg-primary hover:text-white hover:border-primary transition-all active:scale-95 group opacity-80 hover:opacity-100"
           >
             <ChevronLeft size={28} className="group-hover:-translate-x-1 transition-transform" />
           </button>
-          <button 
+          <button
             onClick={next}
             className="absolute right-4 top-1/2 -translate-y-1/2 z-40 w-12 h-12 md:w-14 md:h-14 flex items-center justify-center rounded-full bg-white/80 backdrop-blur-md border border-white/20 shadow-xl text-secondary hover:bg-primary hover:text-white hover:border-primary transition-all active:scale-95 group opacity-80 hover:opacity-100"
           >
@@ -100,9 +100,8 @@ const Gallery = () => {
               <button
                 key={i}
                 onClick={() => setIndex(i)}
-                className={`h-1.5 rounded-full transition-all duration-500 ${
-                  i === index ? 'w-6 bg-primary' : 'w-1.5 bg-white/40 hover:bg-white/80'
-                }`}
+                className={`h-1.5 rounded-full transition-all duration-500 ${i === index ? 'w-6 bg-primary' : 'w-1.5 bg-white/40 hover:bg-white/80'
+                  }`}
               />
             ))}
           </div>
