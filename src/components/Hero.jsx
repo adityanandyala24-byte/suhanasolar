@@ -15,7 +15,7 @@ const Hero = () => {
           <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
         </svg>
       ), 
-      href: "https://instagram.com", 
+      href: "https://www.instagram.com/suhananaturalpower?igsh=MXNxdDJjdmVveGV3ag%3D%3D", 
       color: "hover:bg-[#E1306C]" 
     },
     { 
