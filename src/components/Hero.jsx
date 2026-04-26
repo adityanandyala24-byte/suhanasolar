@@ -55,10 +55,13 @@ const Hero = () => {
 
   const partners = [
     { name: 'Vikram Solar', logo: '/partners/vikramsolar.png' },
-    { name: 'Waaree', logo: '/partners/waaree.png' },
-    { name: 'Tata Solar', logo: '/partners/tata power .png' },
+    { name: 'Waaree Energies', logo: '/partners/waaree.png' },
+    { name: 'Eastman', logo: '/partners/eastman energy.png' },
+    { name: 'ReNew Solar', logo: '/partners/renew.jpeg' },
+    { name: 'TATA Power', logo: '/partners/tata power .png' },
     { name: 'Adani Solar', logo: '/partners/adani solar.png' },
-    { name: 'Eastman', logo: '/partners/eastman energy.png' }
+    { name: 'Polycab', logo: '/partners/polycab.png' },
+    { name: 'Luminous', logo: '/partners/luminous.png' }
   ];
 
   React.useEffect(() => {
@@ -152,8 +155,25 @@ const Hero = () => {
           <div className="bg-white p-8 md:p-10 rounded-[2rem] shadow-2xl border border-white/20 relative min-h-[450px] flex flex-col justify-center items-center text-center">
             <div className="absolute -top-6 -right-6 w-20 h-20 bg-primary rounded-2xl rotate-12 -z-10 shadow-lg" />
             
-            <h3 className="text-3xl font-black text-secondary mb-2">Authorized Retailers</h3>
-            <p className="text-slate-500 text-sm mb-12">Authorized distributors of Tier-1 Solar Panels</p>
+            <div className="h-24 flex flex-col justify-center items-center overflow-hidden mb-8">
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={partnerIndex < 3 ? "distributors" : "retailers"}
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -10 }}
+                  transition={{ duration: 0.3 }}
+                  className="text-center"
+                >
+                  <h3 className="text-3xl font-black text-secondary mb-1">
+                    {partnerIndex < 3 ? "Authorized Distributors" : "Authorized Retailers"}
+                  </h3>
+                  <p className="text-slate-500 text-sm">
+                    Authorized {partnerIndex < 3 ? "distributors" : "retailers"} of Tier-1 Solar Panels
+                  </p>
+                </motion.div>
+              </AnimatePresence>
+            </div>
 
             <div className="relative w-full flex-grow flex flex-col items-center justify-center">
               <div className="relative w-full h-32 md:h-40">

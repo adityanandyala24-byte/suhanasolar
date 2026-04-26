@@ -5,7 +5,7 @@ const Partners = () => {
   const partners = [
     { id: 1, name: "TATA Power", img: "/partners/tata power .png" },
     { id: 2, name: "Adani Solar", img: "/partners/adani solar.png" },
-    { id: 3, name: "Waaree", img: "/partners/waaree.png" },
+    { id: 3, name: "Waaree Energies", img: "/partners/waaree.png" },
     { id: 4, name: "Vikram Solar", img: "/partners/vikramsolar.png" },
     { id: 5, name: "Luminous", img: "/partners/luminous.png" },
     { id: 6, name: "Eastman", img: "/partners/eastman energy.png" },
