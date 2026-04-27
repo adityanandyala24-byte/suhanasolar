@@ -10,6 +10,7 @@ const Team = () => {
   ];
 
   const staff = [
+    { name: "Mr. S. Varun Kumar", edu: "M.Tech (EEE)", role: "Sr. Electrical Engineer", image: "/team-mem.jpeg", objectPosition: "center 10%" },
     { name: "Mr. Sk Kamal", role: "Business Development Manager", image: "/kamal.jpeg", objectPosition: "center 15%" },
     { name: "Mr. Sk Imran", role: "Manager (Stores)", image: "/imran.png", objectPosition: "center 10%" },
     { name: "Mr. M. Satish Kumar", role: "Accountant" },
@@ -108,6 +109,7 @@ const Team = () => {
                 )}
               </div>
               <h4 className="text-base font-bold text-secondary mb-0 whitespace-nowrap">{member.name}</h4>
+              {member.edu && <span className="text-[10px] font-bold text-slate-400 mb-0.5">{member.edu}</span>}
               <span className="text-[9px] font-bold text-primary/80 text-center uppercase tracking-wide">{member.role}</span>
             </div>
           ))}
