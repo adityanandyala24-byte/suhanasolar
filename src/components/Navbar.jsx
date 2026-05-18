@@ -14,22 +14,25 @@ const Navbar = () => {
   }, []);
 
   const navLinks = [
-    { name: 'About', href: '#about' },
-    { name: 'Process', href: '#services' },
-    { name: 'Solutions', href: '#products' },
-    { name: 'Team', href: '#team' },
-    { name: 'Contact', href: '#contact' },
+    { name: 'About', href: '/#about' },
+    { name: 'Process', href: '/#services' },
+    { name: 'Solutions', href: '/#products' },
+    { name: 'Team', href: '/#team' },
+    { name: 'Careers', href: '/careers' },
+    { name: 'Contact', href: '/#contact' },
   ];
 
   return (
     <nav className="fixed top-2 left-4 right-4 md:top-3 md:left-8 md:right-8 z-50">
       <div className={`max-w-7xl mx-auto px-6 py-2 flex justify-between items-center bg-white/95 backdrop-blur-md rounded-full shadow-[0_8px_30px_rgb(0,0,0,0.12)] border border-slate-100 transition-all duration-500 ${isScrolled ? 'shadow-[0_20px_50px_rgb(0,0,0,0.2)]' : ''}`}>
         <div className="flex items-center">
-          <img 
-            src="/suhana-logo.png" 
-            alt="Suhana Solar Logo" 
-            className="h-[40px] md:h-[50px] w-auto object-contain cursor-pointer transition-transform scale-[1.3] md:scale-[1.4] origin-left hover:scale-[1.35] md:hover:scale-[1.45]" 
-          />
+          <a href="/">
+            <img 
+              src="/suhana-logo.png" 
+              alt="Suhana Solar Logo" 
+              className="h-[40px] md:h-[50px] w-auto object-contain cursor-pointer transition-transform scale-[1.3] md:scale-[1.4] origin-left hover:scale-[1.35] md:hover:scale-[1.45]" 
+            />
+          </a>
         </div>
 
         {/* Desktop Nav */}
@@ -43,7 +46,7 @@ const Navbar = () => {
               {link.name}
             </a>
           ))}
-          <a href="#contact" className="bg-primary text-secondary font-black px-6 py-2.5 rounded-full text-xs uppercase tracking-widest hover:bg-primary-dark hover:shadow-xl hover:-translate-y-0.5 transition-all active:scale-95">
+          <a href="/#contact" className="bg-primary text-secondary font-black px-6 py-2.5 rounded-full text-xs uppercase tracking-widest hover:bg-primary-dark hover:shadow-xl hover:-translate-y-0.5 transition-all active:scale-95">
             Get Quote
           </a>
         </div>
@@ -71,7 +74,7 @@ const Navbar = () => {
             </a>
           ))}
           <a 
-            href="#contact" 
+            href="/#contact" 
             className="bg-primary text-secondary text-center py-4 rounded-xl font-bold"
             onClick={() => setIsMobileMenuOpen(false)}
           >
