@@ -12,7 +12,7 @@ const Team = () => {
   const staff = [
     { name: "Mr. S. Varun Kumar", edu: "M.Tech (EEE)", role: "Sr. Electrical Engineer", image: "/team-mem.jpeg", objectPosition: "center 10%" },
     { name: "Mr. Sk Kamal", role: "Business Development Manager", image: "/kamal.jpeg", objectPosition: "center 15%" },
-    { name: "Mr. Sk Imran", role: "Manager (Stores)", image: "/imran.png", objectPosition: "center 10%" },
+    { name: "Mr. Sk Imran", role: "Manager (Warehouses)", image: "/imran.png", objectPosition: "center 10%" },
     { name: "Mr. M. Satish Kumar", role: "Accountant" },
     { name: "Mr. Sk Mastan", role: "Manager (Installations)", image: "/mastan.jpeg", scale: 1.3, objectPosition: "center 20%" },
     { name: "Mr. Sk. Shabbir DEEE", role: "Technical Advisor", image: "/shabbir.jpeg", objectPosition: "center top" },
